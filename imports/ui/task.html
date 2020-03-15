@@ -1,0 +1,47 @@
+<template name="task">
+  <li style="{{ bgc exp }}">
+    {{#if deleteMode}}
+      <button class="delete">&times;</button>
+    {{/if}}
+
+    {{#if translation}}
+    <div class="op" style="float: right;">
+      <button id="remember">Remember</button>
+      <button id="forget">Forget</button>
+      <!-- {{#if isOwner}}
+        <button class="toggle-private">
+          {{#if private}}
+            Private
+          {{else}}
+            Public
+          {{/if}}
+        </button>
+      {{/if}} -->
+    </div>
+    {{/if}}
+
+    <div>
+      <span class="text text-primary">
+        {{#if shiftMode }}
+          {{translation}}
+        {{else}}
+          {{text}}
+        {{/if}}
+      </span>
+      <br>
+      <span class="text text-secondary">
+        {{#if shiftMode }}
+          {{text}}
+        {{else}}
+          {{translation}}
+        {{/if}}
+      </span>
+    </div>
+
+    <i class="text text-muted"> - {{username}}
+      {{#if translation}}
+        | 熟练度 {{exp}}
+      {{/if}}
+    </i>
+  </li>
+</template>

@@ -1,0 +1,43 @@
+<body>
+  <div class="container">
+    <header>
+      <h1>你已经记录 {{count}} 个句子啦! 加油!!!</h1>
+
+      <!-- <label class="hide-completed">
+        <input type="checkbox" />
+        Hide Completed Tasks
+      </label> -->
+
+      <label class="delete-mode">
+        <input type="checkbox" />
+        Edit Mode
+      </label>
+      <label class="sort-mode">
+        <input type="checkbox" />
+        Sort
+      </label>
+      <label class="shift-mode">
+        <input type="checkbox" />
+        Shift
+      </label>
+
+      {{> loginButtons}}
+
+      {{#if currentUser}}
+        <form class="new-task" autocomplete="off">
+          <input type="text" name="text" placeholder="Text" />
+          <input type="text" name="translation" placeholder="Translation" />
+          <input type="submit" style="display:none"/>
+        </form>
+      {{/if}}
+
+    </header>
+
+    <ul>
+      {{#each tasks}}
+        {{> task}}
+      {{/each}}
+    </ul>
+
+  </div>
+</body>
